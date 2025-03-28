@@ -2,7 +2,7 @@ import styled from "styled-components";
 import React, { forwardRef } from "react";
 import { theme } from "../../../../../../../../../theme/index.js";
 import TextInput from "../../../../../../../../reusable-ui/TextInput.tsx";
-import Button from "../../../../../../../../reusable-ui/Button.jsx";
+import Button from "../../../../../../../../reusable-ui/Button.tsx";
 import ImagePreview from "./ImagePreview.jsx";
 import SubmitMessage from "../addForm/SubmitMessage.jsx";
 import { EMPTY_PRODUCT } from "../../../../../../../../../enums/product.js";

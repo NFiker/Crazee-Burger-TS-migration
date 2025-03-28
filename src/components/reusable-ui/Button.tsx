@@ -1,14 +1,23 @@
 import styled from "styled-components";
-import { theme } from "../../theme";
+import { theme } from "../../theme/theme";
 import { css } from "styled-components";
+import { ComponentProps } from "react";
+
+type ButtonVersion = "normal" | "success";
+
+type ButtonProps = {
+  label: string;
+  Icon: JSX.Element;
+  version: ButtonVersion;
+} & ComponentProps<"button">;
 
 export default function Button({
   label,
   Icon,
   className,
-  version = "primary",
+  version = "normal",
   onClick,
-}) {
+}: ButtonProps) {
   return (
     <ButtonStyled className={className} version={version} onClick={onClick}>
       <span>{label}</span>
@@ -17,12 +26,13 @@ export default function Button({
   );
 }
 
-const ButtonStyled = styled.button`
+type ButtonStyledProps = { version: ButtonVersion };
+
+const ButtonStyled = styled.button<ButtonStyledProps>`
   ${({ version }) => extraStyle[version]}
 `;
 
-const extraStylePrimary = css`
-  cursor: pointer;
+const extraStyleNormal = css`
   width: 100%;
   display: inline-flex;
   justify-content: center;
@@ -91,6 +101,6 @@ const extraStyleSuccess = css`
 `;
 
 const extraStyle = {
-  primary: extraStylePrimary,
+  normal: extraStyleNormal,
   success: extraStyleSuccess,
 };

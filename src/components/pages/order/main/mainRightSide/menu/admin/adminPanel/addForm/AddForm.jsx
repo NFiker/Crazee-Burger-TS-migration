@@ -2,7 +2,7 @@ import OrderContext from "../../../../../../../../../context/OrderContext.js";
 import { useContext, useState } from "react";
 import { EMPTY_PRODUCT } from "../../../../../../../../../enums/product.js";
 import Form from "../form/Form.jsx";
-import Button from "../../../../../../../../reusable-ui/Button.jsx";
+import Button from "../../../../../../../../reusable-ui/Button.tsx";
 import SubmitMessage from "./SubmitMessage.jsx";
 import SubmitButton from "./SubmitButton.jsx";
 import { useSuccessMessage } from "../../../../../../../../../hooks/useSuccessMessage.js";
