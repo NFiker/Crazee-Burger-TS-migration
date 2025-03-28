@@ -1,30 +1,43 @@
-import styled from "styled-components";
-import { css } from "styled-components";
-import { theme } from "../../theme";
+import styled, { css } from "styled-components";
+import { theme } from "../../theme/theme";
 import React from "react";
 
-const TextInput = React.forwardRef(
+type TextInputVersion = "normal" | "minimalist";
+
+type TextInputProps = {
+  onChange?: React.ChangeEventHandler<HTMLInputElement>;
+  Icon: JSX.Element;
+  className?: string;
+  version?: TextInputVersion;
+  //  ...extraProps: unknown
+};
+
+const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
   (
-    { value, onChange, Icon, className, version = "normal", ...extraProps },
+    {
+      onChange,
+      Icon,
+      className,
+      version = "normal",
+      ...extraProps
+    }: TextInputProps,
     ref
   ) => {
     return (
       <TextInputStyled className={className} $version={version}>
         <div className="icon">{Icon && Icon}</div>
-        <input
-          ref={ref}
-          value={value}
-          onChange={onChange}
-          type="text"
-          {...extraProps}
-        />
+        <input ref={ref} onChange={onChange} type="text" {...extraProps} />
       </TextInputStyled>
     );
   }
 );
 
+type TextInputStyledProps = {
+  $version: TextInputVersion;
+};
+
 export default TextInput;
-const TextInputStyled = styled.div`
+const TextInputStyled = styled.div<TextInputStyledProps>`
   border-radius: ${theme.borderRadius.round};
   display: flex;
   align-items: center;
@@ -59,7 +72,7 @@ const TextInputStyled = styled.div`
     if (props.$version === "minimalist") return extraStyleMinimalist;
   }}; */
 
-  ${({ version }) => extraStyle[version]}//Dynamic Name Property
+  ${({ $version }) => extraStyle[$version]}//Dynamic Name Property
 `;
 
 const extraStyleNormal = css`

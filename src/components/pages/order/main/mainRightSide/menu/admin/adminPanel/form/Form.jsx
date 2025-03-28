@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import React, { forwardRef } from "react";
 import { theme } from "../../../../../../../../../theme/index.js";
-import TextInput from "../../../../../../../../reusable-ui/TextInput.jsx";
+import TextInput from "../../../../../../../../reusable-ui/TextInput.tsx";
 import Button from "../../../../../../../../reusable-ui/Button.jsx";
 import ImagePreview from "./ImagePreview.jsx";
 import SubmitMessage from "../addForm/SubmitMessage.jsx";
