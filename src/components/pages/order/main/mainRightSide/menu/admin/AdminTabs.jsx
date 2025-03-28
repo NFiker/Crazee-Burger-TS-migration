@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Tab from "../../../../../../reusable-ui/Tab.jsx";
+import Tab from "../../../../../../reusable-ui/Tab.tsx";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import { theme } from "../../../../../../../theme";
