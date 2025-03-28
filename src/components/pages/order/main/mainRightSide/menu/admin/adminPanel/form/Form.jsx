@@ -6,7 +6,7 @@ import Button from "../../../../../../../../reusable-ui/Button.tsx";
 import ImagePreview from "./ImagePreview.jsx";
 import SubmitMessage from "../addForm/SubmitMessage.jsx";
 import { EMPTY_PRODUCT } from "../../../../../../../../../enums/product.js";
-import SelectInput from "../../../../../../../../reusable-ui/SelectInput.jsx";
+import SelectInput from "../../../../../../../../reusable-ui/SelectInput.tsx";
 import { Inputs } from "./Inputs.jsx";
 
 const Form = React.forwardRef(

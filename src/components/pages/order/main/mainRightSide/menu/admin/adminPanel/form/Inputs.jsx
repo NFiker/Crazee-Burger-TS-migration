@@ -1,6 +1,6 @@
 import React from "react";
 import TextInput from "../../../../../../../../reusable-ui/TextInput.tsx";
-import SelectInput from "../../../../../../../../reusable-ui/SelectInput.jsx";
+import SelectInput from "../../../../../../../../reusable-ui/SelectInput.tsx";
 import styled from "styled-components";
 import {
   getInputTextsConfig,
