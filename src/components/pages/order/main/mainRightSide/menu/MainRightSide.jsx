@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { theme } from "../../../../../../theme/index.js";
 import Menu from "./Menu.jsx";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { adminAnimation } from "../../../../../../theme/animations.js";
+import { adminAnimation } from "../../../../../../theme/animations.ts";
 
 export default function MainRightSide() {
   const { isModeAdmin, setIsModeAdmin } = useContext(OrderContext);

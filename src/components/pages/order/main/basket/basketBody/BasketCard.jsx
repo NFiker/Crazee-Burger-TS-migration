@@ -4,7 +4,7 @@ import { theme } from "../../../../../../theme";
 import { MdDeleteForever } from "react-icons/md";
 import { IMAGE_COMING_SOON } from "../../../../../../enums/product";
 import { css } from "styled-components";
-import CasinoEffect from "../../../../../reusable-ui/CasinoEffect.jsx";
+import CasinoEffect from "../../../../../reusable-ui/CasinoEffect.tsx";
 
 export default function BasketCard({
   title,

@@ -13,7 +13,7 @@ import { basketAnimation } from "../../../../../../theme/animations";
 import BasketCard from "./BasketCard.jsx";
 import { formatPrice } from "../../../../../../utils/maths";
 import { convertStringToBoolean } from "../../../../../../utils/string";
-import Sticker from "../../../../../reusable-ui/Sticker.jsx";
+import Sticker from "../../../../../reusable-ui/Sticker.tsx";
 
 export default function BasketProducts() {
   const {
