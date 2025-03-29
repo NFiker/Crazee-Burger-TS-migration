@@ -1,10 +1,22 @@
-import styled from "styled-components";
-import { theme } from "../../theme/index";
+import styled, { css } from "styled-components";
+import { theme } from "../../theme/theme";
 import Button from "./Button";
-import { formatPrice } from "../../utils/maths";
 import { TiDelete } from "react-icons/ti";
-import { css } from "styled-components";
 import { fadeInFromRight, fadeInFromTop } from "../../theme/animations";
+
+type CardProps = {
+  title?: string;
+  imageSource?: string;
+  leftDescription: string;
+  hasDeleteButton?: boolean;
+  onDelete?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
+  isHoverable?: boolean;
+  isSelected?: boolean;
+  onAdd?: React.MouseEventHandler<HTMLButtonElement>;
+  overlapImageSource: string;
+  isOverlapImageVisible?: boolean;
+};
 
 export default function Card({
   imageSource,
@@ -18,7 +30,7 @@ export default function Card({
   onAdd,
   overlapImageSource,
   isOverlapImageVisible,
-}) {
+}: CardProps) {
   return (
     <CardStyled
       onClick={onClick}
@@ -68,7 +80,9 @@ export default function Card({
   );
 }
 
-const CardStyled = styled.div`
+type CardStyledProps = { $isHoverable?: boolean; $isSelected?: boolean };
+
+const CardStyled = styled.div<CardStyledProps>`
   ${(props) => props.$isHoverable && hoverableStyle}
   height: 300px;
 

@@ -7,8 +7,8 @@ type ButtonVersion = "normal" | "success";
 
 type ButtonProps = {
   label: string;
-  Icon: JSX.Element;
-  version: ButtonVersion;
+  Icon?: JSX.Element;
+  version?: ButtonVersion;
 } & ComponentProps<"button">;
 
 export default function Button({
