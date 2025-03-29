@@ -1,5 +1,4 @@
-import React from "react";
-import { theme } from "../../../../../../theme";
+import { theme } from "@/theme/theme.ts";
 import styled from "styled-components";
 import Header from "../../../../../reusable-ui/Header.tsx";
 import { formatPrice } from "../../../../../../utils/maths";

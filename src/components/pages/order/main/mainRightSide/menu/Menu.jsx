@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { theme } from "../../../../../../theme/index";
-import { formatPrice } from "../../../../../../utils/maths";
+import { formatPrice } from "@/utils/maths.ts";
 import { useContext } from "react";
 
 import SimpleBar from "simplebar-react";
@@ -15,7 +15,7 @@ import {
   IMAGE_COMING_SOON,
   IMAGE_NO_STOCK,
 } from "../../../../../../enums/product";
-import { isEmpty } from "../../../../../../utils/array";
+import { isEmpty } from "@/utils/array.ts";
 import Loader from "./Loader";
 import { menuAnimation } from "../../../../../../theme/animations";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
