@@ -5,7 +5,7 @@ import {
   findObjectById,
   findIndexById,
   removeObjectById,
-} from "../utils/array";
+} from "@/utils/array";
 import { setLocalStorage } from "../utils/window";
 
 export const useBasket = () => {
