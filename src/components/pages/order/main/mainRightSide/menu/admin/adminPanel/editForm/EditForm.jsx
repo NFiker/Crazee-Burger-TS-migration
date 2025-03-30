@@ -8,7 +8,7 @@ import { theme } from "../../../../../../../../../theme/index.js";
 import EditInfoMessage from "./EditInfoMessage.jsx";
 import Form from "../form/Form.jsx";
 import SavingMessage from "./SavingMessage.jsx";
-import { useSuccessMessage } from "../../../../../../../../../hooks/useSuccessMessage.js";
+import { useSuccessMessage } from "@/hooks/useSuccessMessage.ts";
 
 export default function EditForm() {
   // State
