@@ -1,4 +1,6 @@
-const EMPTY = []
+import { MenuProduct } from "@/types/MenuProduct";
+
+const EMPTY: MenuProduct[] = [];
 
 const SMALL = [
   {
@@ -19,9 +21,9 @@ const SMALL = [
     isAvailable: false,
     isPublicised: true,
   },
-]
+];
 
-const MEDIUM = [
+const MEDIUM: MenuProduct[] = [
   {
     id: "1",
     imageSource: "/images/burger-bacon-egg.png",
@@ -67,9 +69,9 @@ const MEDIUM = [
     isAvailable: true,
     isPublicised: false,
   },
-]
+];
 
-const LARGE = [
+const LARGE: MenuProduct[] = [
   {
     id: "1",
     imageSource: "/images/burger-bacon-egg.png",
@@ -160,11 +162,11 @@ const LARGE = [
     isAvailable: true,
     isPublicised: false,
   },
-]
+];
 
 export const fakeMenu = {
   EMPTY,
   SMALL,
   MEDIUM,
   LARGE,
-}
+};
