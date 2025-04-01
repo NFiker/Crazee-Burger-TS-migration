@@ -1,19 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { findObjectById } from "../../../../../../utils/array";
+import { findObjectById } from "@/utils/array.ts";
 import { useContext } from "react";
-import OrderContext from "../../../../../../context/OrderContext";
-import {
-  BASKET_MESSAGE,
-  IMAGE_COMING_SOON,
-} from "../../../../../../enums/product";
+import OrderContext from "@/context/OrderContext";
+import { BASKET_MESSAGE, IMAGE_COMING_SOON } from "@/enums/product";
 import { checkIfProductClicked } from "../../mainRightSide/menu/helper";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { basketAnimation } from "../../../../../../theme/animations";
+import { basketAnimation } from "@/theme/animations";
 import BasketCard from "./BasketCard.jsx";
-import { formatPrice } from "../../../../../../utils/maths";
-import { convertStringToBoolean } from "../../../../../../utils/string";
-import Sticker from "../../../../../reusable-ui/Sticker.tsx";
+import { formatPrice } from "@/utils/maths";
+import { convertStringToBoolean } from "@/utils/string";
+import Sticker from "@/components/reusable-ui/Sticker.tsx";
 
 export default function BasketProducts() {
   const {

@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../../../../../theme";
+import { theme } from "@/theme/theme.ts";
 import { MdDeleteForever } from "react-icons/md";
-import { IMAGE_COMING_SOON } from "../../../../../../enums/product";
+import { IMAGE_COMING_SOON } from "@/enums/product";
 import { css } from "styled-components";
-import CasinoEffect from "../../../../../reusable-ui/CasinoEffect.tsx";
+import CasinoEffect from "@/components/reusable-ui/CasinoEffect.tsx";
 
 export default function BasketCard({
   title,
