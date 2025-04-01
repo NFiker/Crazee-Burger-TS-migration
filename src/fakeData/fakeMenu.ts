@@ -1,4 +1,4 @@
-import { MenuProduct } from "@/types/MenuProduct";
+import { MenuProduct } from "@/types/Product";
 
 const EMPTY: MenuProduct[] = [];
 
