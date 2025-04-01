@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import Main from "./main/Main";
-import { theme } from "../../../theme/index";
+import { theme } from "@/theme/index";
 import { useState, useRef, useEffect } from "react";
 import Navbar from "./navbar/Navbar";
 import OrderContext from "../../../context/OrderContext";
 import { EMPTY_PRODUCT } from "../../../enums/product";
-import { useMenu } from "../../../hooks/useMenu";
-import { useBasket } from "../../../hooks/useBasket";
+import { useMenu } from "@/hooks/useMenu";
+import { useBasket } from "@/hooks/useBasket";
 import { findObjectById } from "@/utils/array";
 import { useParams } from "react-router-dom";
 import { initialiseUserSession } from "./helpers/initialiseUserSession";

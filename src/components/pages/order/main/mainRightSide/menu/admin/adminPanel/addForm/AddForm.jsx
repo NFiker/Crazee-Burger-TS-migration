@@ -5,7 +5,7 @@ import Form from "../form/Form.jsx";
 import Button from "../../../../../../../../reusable-ui/Button.tsx";
 import SubmitMessage from "./SubmitMessage.jsx";
 import SubmitButton from "./SubmitButton.jsx";
-import { useSuccessMessage } from "../../../../../../../../../hooks/useSuccessMessage.js";
+import { useSuccessMessage } from "@/hooks/useSuccessMessage.ts";
 import { replaceFrenchCommaWithDot } from "@/utils/maths.ts";
 export default function AddForm() {
   //State
