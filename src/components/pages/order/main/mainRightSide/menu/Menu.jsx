@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import { theme } from "@/theme/theme.ts";
 import { formatPrice } from "@/utils/maths.ts";
-import { useContext } from "react";
+// import { useContext } from "react";
 
 import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
 import Card from "@/components/reusable-ui/Card.tsx";
-import OrderContext from "@/context/OrderContext.jsx";
+import { useOrderContext } from "@/context/OrderContext.jsx";
 import EmptyMenuAdmin from "./EmptyMenuAdmin";
 import EmptyMenuClient from "./EmptyMenuClient";
 import { checkIfProductClicked } from "./helper";
@@ -35,8 +35,7 @@ export default function Menu() {
     handleAddToBasket,
     handleDeleteBasketProduct,
     handleProductSelected,
-  } = useContext(OrderContext);
-
+  } = useOrderContext();
   //comportements
 
   const handleCardDelete = (event, idProductToDelete) => {

@@ -5,7 +5,8 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { theme } from "@/theme/theme.ts";
 import OrderPage from "@/components/pages/order/OrderPage";
 import { useContext } from "react";
-import OrderContext from "@/context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext";
+
 import { getTabsConfig } from "./adminPanel/getTabsConfig.jsx";
 
 export default function AdminTabs() {
@@ -14,8 +15,7 @@ export default function AdminTabs() {
     setIsCollapsed,
     currentTabSelected,
     setCurrentTabSelected,
-  } = useContext(OrderContext);
-
+  } = useOrderContext();
   const selectTab = (tabSelected) => {
     setIsCollapsed(false); // Ouvre le panel admin au click d'un tab
     setCurrentTabSelected(tabSelected); // réactualise l'onglet sélectionné

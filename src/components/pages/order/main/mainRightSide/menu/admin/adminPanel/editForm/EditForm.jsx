@@ -1,4 +1,5 @@
-import OrderContext from "@/context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext";
+
 import { useState, useContext } from "react";
 import styled from "styled-components";
 import ImagePreview from "../form/ImagePreview.jsx";
@@ -17,8 +18,7 @@ export default function EditForm() {
     setProductSelected,
     handleEdit,
     titleEditRef,
-  } = useContext(OrderContext);
-
+  } = useOrderContext();
   const [valueOnFocus, setValueOnFocus] = useState();
   const { isSubmitted: isSaved, displaySuccessMessage } = useSuccessMessage();
 

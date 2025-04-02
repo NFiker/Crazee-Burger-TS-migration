@@ -1,5 +1,6 @@
 import Admin from "./admin/Admin.jsx";
-import OrderContext from "@/context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext";
+
 import { useContext } from "react";
 import styled from "styled-components";
 import { theme } from "@/theme/theme.ts";
@@ -8,8 +9,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { adminAnimation } from "@/theme/animations.ts";
 
 export default function MainRightSide() {
-  const { isModeAdmin, setIsModeAdmin } = useContext(OrderContext);
-
+  const { isModeAdmin, setIsModeAdmin } = useOrderContext();
   return (
     <MainRightSideStyled>
       <Menu />

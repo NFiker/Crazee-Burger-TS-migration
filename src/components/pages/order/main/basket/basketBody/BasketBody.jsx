@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import { isEmpty } from "@/utils/array";
-import OrderContext from "@/context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext";
+
 import EmptyBasket from "./EmptyBasket";
 import BasketProducts from "./BasketProducts";
 
 export default function BasketBody() {
-  const { menu, basket } = useContext(OrderContext);
-
+  const { menu, basket } = useOrderContext();
   return (
     <>
       {isEmpty(basket) ? (

@@ -8,11 +8,10 @@ import ToastAdmin from "./ToastAdmin";
 import { theme } from "../../../../theme/index";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import OrderContext from "@/context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext";
 
 export default function Navlogin() {
-  const { isModeAdmin, setIsModeAdmin } = useContext(OrderContext);
-
+  const { isModeAdmin, setIsModeAdmin } = useOrderContext();
   const notify = () => {
     if (!isModeAdmin) {
       toast.info("Mode admin activé", {
