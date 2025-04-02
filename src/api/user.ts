@@ -1,8 +1,9 @@
 import { getDoc, setDoc, doc } from "firebase/firestore";
 import { db } from "./firebase-config";
 import { fakeMenu } from "../fakeData/fakeMenu";
+import { User } from "@/types/User";
 
-export const getUser = async (userId) => {
+export const getUser = async (userId: string): Promise<User | undefined> => {
   // const docref = doc(CHEMIN)
   const docRef = doc(db, "users", userId);
 
@@ -10,16 +11,16 @@ export const getUser = async (userId) => {
 
   if (docSnapshot.exists()) {
     const userReceived = docSnapshot.data();
-    return userReceived;
+    return userReceived as User;
   }
 };
 
-export const createUser = async (userId) => {
+export const createUser = async (userId: string): Promise<User> => {
   // CACHETTE
   const docRef = doc(db, "users", userId);
 
   // NOURRITURE
-  const newUserToCreate = {
+  const newUserToCreate: User = {
     username: userId,
     menu: fakeMenu.LARGE,
   };
@@ -29,11 +30,10 @@ export const createUser = async (userId) => {
   return newUserToCreate;
 };
 
-export const authenticateUser = async (userId) => {
+export const authenticateUser = async (userId: string): Promise<User> => {
   const existingUser = await getUser(userId);
 
-  if (!existingUser) {
-    return await createUser(userId);
-  }
+  if (!existingUser) return await createUser(userId);
+
   return existingUser;
 };

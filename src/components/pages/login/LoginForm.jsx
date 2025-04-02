@@ -3,10 +3,10 @@ import { BsPersonCircle } from "react-icons/bs";
 import { IoChevronForward } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import TextInput from "../../reusable-ui/TextInput";
-import Button from "../../reusable-ui/Button";
-import { theme } from "../../../theme";
-import { authenticateUser } from "../../../api/user";
+import TextInput from "@/components/reusable-ui/TextInput";
+import Button from "@/components/reusable-ui/Button";
+import { theme } from "@/theme/theme.ts";
+import { authenticateUser } from "@/api/user.ts";
 import Welcome from "./Welcome";
 
 export default function LoginForm() {
