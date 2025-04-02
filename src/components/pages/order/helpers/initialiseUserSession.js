@@ -1,6 +1,6 @@
-import { getMenu } from "../../../../api/product";
-import { getLocalStorage } from "../../../../utils/window";
-import { fakeBasket } from "../../../../fakeData/fakeBasket";
+import { getMenu } from "@/api/product.ts";
+import { getLocalStorage } from "@/utils/window.ts";
+import { fakeBasket } from "@/fakeData/fakeBasket.ts";
 
 const initialiseMenu = async (username, setMenu) => {
   const menuReceived = await getMenu(username);

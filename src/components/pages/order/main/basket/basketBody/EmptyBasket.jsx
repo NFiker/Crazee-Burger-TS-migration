@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { BASKET_MESSAGE } from "../../../../../../enums/product";
-import { theme } from "../../../../../../theme";
+import { BASKET_MESSAGE } from "@/constants/product.ts";
+import { theme } from "@/theme/theme.ts";
 
 export default function EmptyBasket({ isLoading }) {
   return (

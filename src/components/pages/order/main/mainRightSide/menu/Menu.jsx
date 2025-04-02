@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { theme } from "../../../../../../theme/index";
+import { theme } from "@/theme/theme.ts";
 import { formatPrice } from "@/utils/maths.ts";
 import { useContext } from "react";
 
 import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
-import Card from "../../../../../reusable-ui/Card";
-import OrderContext from "../../../../../../context/OrderContext";
+import Card from "@/components/reusable-ui/Card.tsx";
+import OrderContext from "@/context/OrderContext.js";
 import EmptyMenuAdmin from "./EmptyMenuAdmin";
 import EmptyMenuClient from "./EmptyMenuClient";
 import { checkIfProductClicked } from "./helper";
@@ -14,12 +14,12 @@ import {
   EMPTY_PRODUCT,
   IMAGE_COMING_SOON,
   IMAGE_NO_STOCK,
-} from "../../../../../../enums/product";
+} from "@/constants/product.ts";
 import { isEmpty } from "@/utils/array.ts";
 import Loader from "./Loader";
-import { menuAnimation } from "../../../../../../theme/animations";
+import { menuAnimation } from "@/theme/animations.ts";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { convertStringToBoolean } from "../../../../../../utils/string";
+import { convertStringToBoolean } from "@/utils/string.ts";
 import RibbonAnimated, { ribbonAnimation } from "./RibbonAnimated";
 
 export default function Menu() {
