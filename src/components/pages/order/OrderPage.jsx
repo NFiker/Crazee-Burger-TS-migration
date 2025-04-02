@@ -4,7 +4,7 @@ import { theme } from "@/theme/index";
 import { useState, useRef, useEffect } from "react";
 import Navbar from "./navbar/Navbar";
 import OrderContext from "../../../context/OrderContext";
-import { EMPTY_PRODUCT } from "@/enums/product";
+import { EMPTY_PRODUCT } from "@/constants/product";
 import { useMenu } from "@/hooks/useMenu";
 import { useBasket } from "@/hooks/useBasket";
 import { findObjectById } from "@/utils/array";

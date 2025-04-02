@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { findObjectById } from "@/utils/array.ts";
 import { useContext } from "react";
 import OrderContext from "@/context/OrderContext";
-import { BASKET_MESSAGE, IMAGE_COMING_SOON } from "@/enums/product";
+import { BASKET_MESSAGE, IMAGE_COMING_SOON } from "@/constants/product";
 import { checkIfProductClicked } from "../../mainRightSide/menu/helper";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { basketAnimation } from "@/theme/animations";

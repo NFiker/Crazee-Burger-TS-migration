@@ -1,6 +1,6 @@
 //@ts-ignore
 //@TODO: migrate enum/product file
-import { EMPTY_PRODUCT } from "@/enums/product";
+import { EMPTY_PRODUCT } from "@/constants/product";
 
 import { BasketProduct } from "@/types/Product";
 

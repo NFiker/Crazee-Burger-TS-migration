@@ -14,7 +14,7 @@ import {
   EMPTY_PRODUCT,
   IMAGE_COMING_SOON,
   IMAGE_NO_STOCK,
-} from "@/enums/product.ts";
+} from "@/constants/product.ts";
 import { isEmpty } from "@/utils/array.ts";
 import Loader from "./Loader";
 import { menuAnimation } from "@/theme/animations.ts";

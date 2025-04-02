@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { theme } from "@/theme/theme.ts";
 import { MdDeleteForever } from "react-icons/md";
-import { IMAGE_COMING_SOON } from "@/enums/product";
+import { IMAGE_COMING_SOON } from "@/constants/product";
 import { css } from "styled-components";
 import CasinoEffect from "@/components/reusable-ui/CasinoEffect.tsx";
 
