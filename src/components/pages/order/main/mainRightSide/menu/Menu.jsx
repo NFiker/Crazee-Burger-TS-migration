@@ -6,7 +6,7 @@ import { useContext } from "react";
 import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
 import Card from "@/components/reusable-ui/Card.tsx";
-import OrderContext from "@/context/OrderContext.js";
+import OrderContext from "@/context/OrderContext.jsx";
 import EmptyMenuAdmin from "./EmptyMenuAdmin";
 import EmptyMenuClient from "./EmptyMenuClient";
 import { checkIfProductClicked } from "./helper";

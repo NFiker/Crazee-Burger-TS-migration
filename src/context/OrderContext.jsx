@@ -1,18 +1,45 @@
-import styled from "styled-components";
-import Main from "./main/Main";
-import { theme } from "@/theme/index";
-import { useState, useRef, useEffect } from "react";
-import Navbar from "./navbar/Navbar";
-import OrderContext from "@/context/OrderContext";
-import { EMPTY_PRODUCT } from "@/constants/product";
-import { useMenu } from "@/hooks/useMenu";
-import { useBasket } from "@/hooks/useBasket";
-import { findObjectById } from "@/utils/array";
-import { useParams } from "react-router-dom";
-import { initialiseUserSession } from "./helpers/initialiseUserSession";
+import { createContext, useContext, useState, useRef } from "react";
+import { useMenu } from "@/hooks/useMenu.ts";
+import { useBasket } from "@/hooks/useBasket.ts";
+import { findObjectById } from "@/utils/array.ts";
+import { EMPTY_PRODUCT } from "@/constants/product.ts";
 
-export default function OrderPage() {
-  //State
+// 1. Création du contexte
+const OrderContext = createContext({
+  username: "",
+  isModeAdmin: false,
+  setIsModeAdmin: () => {},
+
+  isCollapsed: false,
+  setIsCollapsed: () => {},
+
+  currentTabSelected: false,
+  setCurrentTabSelected: () => {},
+
+  menu: [],
+  handleAdd: () => {},
+  handleDelete: () => {},
+  handleEdit: () => {},
+  resetMenu: () => {},
+
+  newProduct: {},
+  setNewProduct: () => {},
+
+  productSelected: {},
+  setProductSelected: () => {},
+  handleProductSelected: () => {},
+
+  titleEditRef: {},
+
+  basket: [],
+  handleAddToBasket: () => {},
+  handleDeleteBasketProduct: () => {},
+});
+
+export default OrderContext;
+
+// 2. Installation du contexte (provider)
+export const OrderContextProvider = ({ children }) => {
   const [isModeAdmin, setIsModeAdmin] = useState(false);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [currentTabSelected, setCurrentTabSelected] = useState("edit");
@@ -23,7 +50,6 @@ export default function OrderPage() {
     useMenu();
   const { basket, setBasket, handleAddToBasket, handleDeleteBasketProduct } =
     useBasket();
-  const { username } = useParams();
 
   const handleProductSelected = async (idProductClicked) => {
     const productClickedOn = findObjectById(idProductClicked, menu);
@@ -32,13 +58,7 @@ export default function OrderPage() {
     await setProductSelected(productClickedOn);
     titleEditRef.current.focus();
   };
-
-  useEffect(() => {
-    initialiseUserSession(username, setMenu, setBasket);
-  }, []);
-
   const orderContextValue = {
-    username,
     isModeAdmin,
     setIsModeAdmin,
     isCollapsed,
@@ -46,6 +66,7 @@ export default function OrderPage() {
     currentTabSelected,
     setCurrentTabSelected,
     menu,
+    setMenu,
     handleAdd,
     handleDelete,
     resetMenu,
@@ -56,38 +77,18 @@ export default function OrderPage() {
     handleEdit,
     titleEditRef,
     basket,
+    setBasket,
     handleAddToBasket,
     handleDeleteBasketProduct,
     handleProductSelected,
   };
 
-  //Affichage
   return (
     <OrderContext.Provider value={orderContextValue}>
-      <OrderPageStyled>
-        <div className="container">
-          <Navbar />
-          <Main />
-        </div>
-      </OrderPageStyled>
+      {children}
     </OrderContext.Provider>
   );
-}
+};
 
-const OrderPageStyled = styled.div`
-  background: ${theme.colors.primary};
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: ${theme.colors.primary};
-
-  .container {
-    height: 95vh;
-    margin: 0 1rem;
-    width: 1400px;
-    display: flex;
-    flex-direction: column;
-    border-radius: ${theme.borderRadius.extraRound};
-  }
-`;
+// 3. Consommation du contexte (custom hooks)
+export const useOrderContext = () => useContext(OrderContext);

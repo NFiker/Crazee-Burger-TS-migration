@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import Tab from "../../../../../../reusable-ui/Tab.tsx";
+import Tab from "@/components/reusable-ui/Tab.tsx";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
-import { theme } from "../../../../../../../theme";
-import OrderPage from "../../../../OrderPage.jsx";
+import { theme } from "@/theme/theme.ts";
+import OrderPage from "@/components/pages/order/OrderPage";
 import { useContext } from "react";
-import OrderContext from "../../../../../../../context/OrderContext";
+import OrderContext from "@/context/OrderContext";
 import { getTabsConfig } from "./adminPanel/getTabsConfig.jsx";
 
 export default function AdminTabs() {

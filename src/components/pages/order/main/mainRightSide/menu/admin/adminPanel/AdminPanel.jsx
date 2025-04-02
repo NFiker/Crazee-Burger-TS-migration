@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { theme } from "@/theme/theme.ts";
 import { useContext } from "react";
-import OrderContext from "../../../../../../../../context/OrderContext";
+import OrderContext from "@/context/OrderContext";
 import { getTabsConfig, getTabsSelected } from "./getTabsConfig";
 import { EMPTY_PRODUCT } from "@/constants/product.ts";
 

@@ -1,4 +1,4 @@
-import OrderContext from "@/context/OrderContext.js";
+import OrderContext from "@/context/OrderContext";
 import { useContext, useState } from "react";
 import { EMPTY_PRODUCT } from "@/constants/product.ts";
 import Form from "../form/Form.jsx";

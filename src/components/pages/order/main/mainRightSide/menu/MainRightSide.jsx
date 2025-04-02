@@ -1,11 +1,11 @@
 import Admin from "./admin/Admin.jsx";
-import OrderContext from "../../../../../../context/OrderContext.js";
+import OrderContext from "@/context/OrderContext";
 import { useContext } from "react";
 import styled from "styled-components";
-import { theme } from "../../../../../../theme/index.js";
+import { theme } from "@/theme/theme.ts";
 import Menu from "./Menu.jsx";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { adminAnimation } from "../../../../../../theme/animations.ts";
+import { adminAnimation } from "@/theme/animations.ts";
 
 export default function MainRightSide() {
   const { isModeAdmin, setIsModeAdmin } = useContext(OrderContext);
