@@ -5,7 +5,7 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { theme } from "@/theme/theme.ts";
 import OrderPage from "@/components/pages/order/OrderPage";
 import { useContext } from "react";
-import { useOrderContext } from "@/context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext.tsx";
 
 import { getTabsConfig } from "./adminPanel/getTabsConfig.jsx";
 

@@ -1,4 +1,4 @@
-import { useOrderContext } from "@/context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext.tsx";
 
 import { useState, useContext } from "react";
 import styled from "styled-components";

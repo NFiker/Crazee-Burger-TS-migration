@@ -1,4 +1,4 @@
-import { useOrderContext } from "@/context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext.tsx";
 
 import { useContext, useState } from "react";
 import { EMPTY_PRODUCT } from "@/constants/product.ts";

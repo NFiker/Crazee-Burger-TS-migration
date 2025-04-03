@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { isEmpty } from "@/utils/array";
-import { useOrderContext } from "@/context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext.tsx";
 
 import EmptyBasket from "./EmptyBasket";
 import BasketProducts from "./BasketProducts";

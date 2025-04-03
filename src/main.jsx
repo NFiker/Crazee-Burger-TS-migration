@@ -5,7 +5,7 @@ import { router } from "./routers/router.jsx";
 import { theme } from "./theme/index.js";
 import { ThemeProvider } from "styled-components";
 import { RouterProvider } from "react-router-dom";
-import { OrderContextProvider } from "./context/OrderContext.jsx";
+import { OrderContextProvider } from "./context/OrderContext.tsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

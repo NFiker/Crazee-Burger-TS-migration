@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Header from "@/components/reusable-ui/Header.tsx";
 import { formatPrice } from "@/utils/maths";
 import { useContext } from "react";
-import { useOrderContext } from "@/context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext.tsx";
 
 import { calculateSumToPay } from "./helper";
 import CasinoEffect from "@/components/reusable-ui/CasinoEffect.tsx";

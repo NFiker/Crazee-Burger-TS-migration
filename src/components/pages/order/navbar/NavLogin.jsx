@@ -8,7 +8,7 @@ import ToastAdmin from "./ToastAdmin";
 import { theme } from "../../../../theme/index";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useOrderContext } from "@/context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext.tsx";
 
 export default function Navlogin() {
   const { isModeAdmin, setIsModeAdmin } = useOrderContext();

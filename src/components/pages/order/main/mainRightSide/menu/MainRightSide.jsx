@@ -1,5 +1,5 @@
 import Admin from "./admin/Admin.jsx";
-import { useOrderContext } from "@/context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext.tsx";
 
 import { useContext } from "react";
 import styled from "styled-components";

@@ -6,7 +6,7 @@ import { formatPrice } from "@/utils/maths.ts";
 import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
 import Card from "@/components/reusable-ui/Card.tsx";
-import { useOrderContext } from "@/context/OrderContext.jsx";
+import { useOrderContext } from "@/context/OrderContext.tsx";
 import EmptyMenuAdmin from "./EmptyMenuAdmin";
 import EmptyMenuClient from "./EmptyMenuClient";
 import { checkIfProductClicked } from "./helper";

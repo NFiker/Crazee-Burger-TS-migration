@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { findObjectById } from "@/utils/array.ts";
 import { useContext } from "react";
-import { useOrderContext } from "@/context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext.tsx";
 
 import { BASKET_MESSAGE, IMAGE_COMING_SOON } from "@/constants/product";
 import { checkIfProductClicked } from "../../mainRightSide/menu/helper";

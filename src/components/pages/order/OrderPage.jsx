@@ -3,7 +3,7 @@ import Main from "./main/Main";
 import { theme } from "@/theme/index";
 import { useEffect } from "react";
 import Navbar from "./navbar/Navbar";
-import { useOrderContext } from "@/context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext.tsx";
 import { useParams } from "react-router-dom";
 import { initialiseUserSession } from "./helpers/initialiseUserSession";
 

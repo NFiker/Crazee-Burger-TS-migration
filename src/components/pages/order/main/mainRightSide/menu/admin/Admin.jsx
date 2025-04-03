@@ -3,7 +3,7 @@ import { theme } from "@/theme/theme.ts";
 import AdminTabs from "../admin/AdminTabs";
 import AdminPanel from "./adminPanel/AdminPanel";
 import { useContext } from "react";
-import { useOrderContext } from "@/context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext.tsx";
 
 import { fadeInFromBottom } from "@/theme/animations.ts";
 
