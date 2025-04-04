@@ -1,37 +1,17 @@
 import styled from "styled-components";
+//@ts-ignore
 import Main from "./main/Main";
-import { theme } from "@/theme/index";
+import { theme } from "@/theme/theme";
 import { useEffect } from "react";
+//@ts-ignore
 import Navbar from "./navbar/Navbar";
 import { useOrderContext } from "@/context/OrderContext.tsx";
 import { useParams } from "react-router-dom";
+//@ts-ignore
 import { initialiseUserSession } from "./helpers/initialiseUserSession";
 
 export default function OrderPage() {
-  const {
-    // username,
-    isModeAdmin,
-    setIsModeAdmin,
-    isCollapsed,
-    setIsCollapsed,
-    currentTabSelected,
-    setCurrentTabSelected,
-    menu,
-    setMenu,
-    handleAdd,
-    handleDelete,
-    resetMenu,
-    newProduct,
-    setNewProduct,
-    productSelected,
-    setProductSelected,
-    handleEdit,
-    titleEditRef,
-    basket,
-    setBasket,
-    handleAddToBasket,
-    handleDeleteBasketProduct,
-  } = useOrderContext();
+  const { setMenu, setBasket } = useOrderContext();
 
   const { username } = useParams();
 
