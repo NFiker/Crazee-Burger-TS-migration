@@ -1,14 +1,15 @@
 import { theme } from "@/theme/theme.ts";
 import styled from "styled-components";
-import Header from "../../../../../reusable-ui/Header.tsx";
-import { formatPrice } from "../../../../../../utils/maths";
+import Header from "@/components/reusable-ui/Header.tsx";
+import { formatPrice } from "@/utils/maths";
 import { useContext } from "react";
-import OrderContext from "../../../../../../context/OrderContext";
+import { useOrderContext } from "@/context/OrderContext.tsx";
+
 import { calculateSumToPay } from "./helper";
-import CasinoEffect from "../../../../../reusable-ui/CasinoEffect.tsx";
+import CasinoEffect from "@/components/reusable-ui/CasinoEffect.tsx";
 
 export default function Total() {
-  const { basket, menu } = useContext(OrderContext);
+  const { basket, menu } = useOrderContext();
   const sumToPay = calculateSumToPay(basket, menu);
 
   return (

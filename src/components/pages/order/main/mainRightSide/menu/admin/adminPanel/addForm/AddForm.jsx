@@ -1,4 +1,5 @@
-import OrderContext from "@/context/OrderContext.js";
+import { useOrderContext } from "@/context/OrderContext.tsx";
+
 import { useContext, useState } from "react";
 import { EMPTY_PRODUCT } from "@/constants/product.ts";
 import Form from "../form/Form.jsx";
@@ -9,8 +10,7 @@ import { useSuccessMessage } from "@/hooks/useSuccessMessage.ts";
 import { replaceFrenchCommaWithDot } from "@/utils/maths.ts";
 export default function AddForm() {
   //State
-  const { username, handleAdd, newProduct, setNewProduct } =
-    useContext(OrderContext);
+  const { username, handleAdd, newProduct, setNewProduct } = useOrderContext();
   const { isSubmitted, displaySuccessMessage } = useSuccessMessage();
 
   //Comportements

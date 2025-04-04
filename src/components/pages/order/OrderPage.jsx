@@ -1,44 +1,15 @@
 import styled from "styled-components";
 import Main from "./main/Main";
 import { theme } from "@/theme/index";
-import { useState, useRef, useEffect } from "react";
+import { useEffect } from "react";
 import Navbar from "./navbar/Navbar";
-import OrderContext from "../../../context/OrderContext";
-import { EMPTY_PRODUCT } from "@/constants/product";
-import { useMenu } from "@/hooks/useMenu";
-import { useBasket } from "@/hooks/useBasket";
-import { findObjectById } from "@/utils/array";
+import { useOrderContext } from "@/context/OrderContext.tsx";
 import { useParams } from "react-router-dom";
 import { initialiseUserSession } from "./helpers/initialiseUserSession";
 
 export default function OrderPage() {
-  //State
-  const [isModeAdmin, setIsModeAdmin] = useState(false);
-  const [isCollapsed, setIsCollapsed] = useState(false);
-  const [currentTabSelected, setCurrentTabSelected] = useState("edit");
-  const [newProduct, setNewProduct] = useState(EMPTY_PRODUCT);
-  const [productSelected, setProductSelected] = useState(EMPTY_PRODUCT);
-  const titleEditRef = useRef();
-  const { menu, setMenu, handleAdd, handleDelete, handleEdit, resetMenu } =
-    useMenu();
-  const { basket, setBasket, handleAddToBasket, handleDeleteBasketProduct } =
-    useBasket();
-  const { username } = useParams();
-
-  const handleProductSelected = async (idProductClicked) => {
-    const productClickedOn = findObjectById(idProductClicked, menu);
-    await setIsCollapsed(false);
-    await setCurrentTabSelected("edit");
-    await setProductSelected(productClickedOn);
-    titleEditRef.current.focus();
-  };
-
-  useEffect(() => {
-    initialiseUserSession(username, setMenu, setBasket);
-  }, []);
-
-  const orderContextValue = {
-    username,
+  const {
+    // username,
     isModeAdmin,
     setIsModeAdmin,
     isCollapsed,
@@ -46,6 +17,7 @@ export default function OrderPage() {
     currentTabSelected,
     setCurrentTabSelected,
     menu,
+    setMenu,
     handleAdd,
     handleDelete,
     resetMenu,
@@ -56,21 +28,24 @@ export default function OrderPage() {
     handleEdit,
     titleEditRef,
     basket,
+    setBasket,
     handleAddToBasket,
     handleDeleteBasketProduct,
-    handleProductSelected,
-  };
+  } = useOrderContext();
 
-  //Affichage
+  const { username } = useParams();
+
+  useEffect(() => {
+    initialiseUserSession(username, setMenu, setBasket);
+  }, [username, setMenu, setBasket]);
+
   return (
-    <OrderContext.Provider value={orderContextValue}>
-      <OrderPageStyled>
-        <div className="container">
-          <Navbar />
-          <Main />
-        </div>
-      </OrderPageStyled>
-    </OrderContext.Provider>
+    <OrderPageStyled>
+      <div className="container">
+        <Navbar />
+        <Main />
+      </div>
+    </OrderPageStyled>
   );
 }
 

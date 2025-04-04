@@ -1,10 +1,10 @@
-// import HintMessage from "./HintMessage";
-import OrderContext from "../../../../../../../../../context/OrderContext.js";
+import { useOrderContext } from "@/context/OrderContext.tsx";
+
 import { useState, useContext } from "react";
 import styled from "styled-components";
 import ImagePreview from "../form/ImagePreview.jsx";
-import TextInput from "../../../../../../../../reusable-ui/TextInput.tsx";
-import { theme } from "../../../../../../../../../theme/index.js";
+import TextInput from "@/components/reusable-ui/TextInput.tsx";
+import { theme } from "@/theme/theme.ts";
 import EditInfoMessage from "./EditInfoMessage.jsx";
 import Form from "../form/Form.jsx";
 import SavingMessage from "./SavingMessage.jsx";
@@ -18,8 +18,7 @@ export default function EditForm() {
     setProductSelected,
     handleEdit,
     titleEditRef,
-  } = useContext(OrderContext);
-
+  } = useOrderContext();
   const [valueOnFocus, setValueOnFocus] = useState();
   const { isSubmitted: isSaved, displaySuccessMessage } = useSuccessMessage();
 
