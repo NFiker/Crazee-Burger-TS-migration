@@ -11,11 +11,11 @@ import Welcome from "./Welcome";
 
 export default function LoginForm() {
   // State
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState<string>("");
   const navigate = useNavigate();
 
   //Comportements
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const userReceived = await authenticateUser(username);
 
@@ -23,7 +23,7 @@ export default function LoginForm() {
     navigate(`order/${userReceived.username}`);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(e.target.value);
   };
 

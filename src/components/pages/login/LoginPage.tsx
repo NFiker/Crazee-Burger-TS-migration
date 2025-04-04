@@ -1,5 +1,4 @@
 import styled from "styled-components";
-//@ts-ignore
 import LoginForm from "./LoginForm";
 import Logo from "@/components/reusable-ui/Logo";
 export default function LoginPage() {
