@@ -3,7 +3,7 @@ import Tab from "@/components/reusable-ui/Tab.tsx";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import { theme } from "@/theme/theme.ts";
-import OrderPage from "@/components/pages/order/OrderPage";
+import OrderPage from "@/components/pages/order/OrderPage.tsx";
 import { useContext } from "react";
 import { useOrderContext } from "@/context/OrderContext.tsx";
 

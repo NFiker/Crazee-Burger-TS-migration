@@ -102,4 +102,11 @@ export const OrderContextProvider = ({ children }: PropsWithChildren) => {
 };
 
 // 3. Consommation du contexte (custom hooks)
-export const useOrderContext = () => useContext(OrderContext);
+export const useOrderContext = () => {
+  const OrderContextData = useContext(OrderContext);
+  if (OrderContextData === undefined)
+    throw new Error(
+      "useOrderContext() can be used only within OrderContextProvider tags"
+    );
+  return OrderContextData;
+};
