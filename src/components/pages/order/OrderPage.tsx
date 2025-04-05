@@ -15,8 +15,8 @@ export default function OrderPage() {
   const { username } = useParams();
 
   useEffect(() => {
-    initialiseUserSession(username, setMenu, setBasket);
-  }, [username, setMenu, setBasket]);
+    username && initialiseUserSession(username, setMenu, setBasket);
+  }, []);
 
   return (
     <OrderPageStyled>
