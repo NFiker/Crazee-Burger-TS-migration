@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Main from "./main/Main";
 import { theme } from "@/theme/theme";
 import { useEffect } from "react";
-//@ts-ignore
 import Navbar from "./navbar/Navbar";
 import { useOrderContext } from "@/context/OrderContext.tsx";
 import { useParams } from "react-router-dom";

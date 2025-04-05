@@ -1,12 +1,9 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Profile from "./Profile";
 import { GrUserAdmin } from "react-icons/gr";
-import ToggleButton from "../../../reusable-ui/ToggleButton";
-import { useContext } from "react";
+import ToggleButton from "@/components/reusable-ui/ToggleButton";
 import ToastAdmin from "./ToastAdmin";
-import { theme } from "../../../../theme/index";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useOrderContext } from "@/context/OrderContext.tsx";
 
