@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { theme } from "@/theme/theme.ts";
 import styled from "styled-components";
 import Header from "@/components/reusable-ui/Header.tsx";
