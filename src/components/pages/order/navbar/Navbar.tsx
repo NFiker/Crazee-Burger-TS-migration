@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import NavLogin from "./NavLogin";
-import Logo from "../../../reusable-ui/Logo";
-import { theme } from "../../../../theme/index";
-import { refreshPage } from "../../../../utils/window";
+import Logo from "@/components/reusable-ui/Logo";
+import { theme } from "@/theme/theme";
+import { refreshPage } from "@/utils/window";
 
 export default function Navbar() {
   return (

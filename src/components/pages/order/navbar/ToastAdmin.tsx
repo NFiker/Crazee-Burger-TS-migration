@@ -1,10 +1,14 @@
-import { theme } from "../../../../theme/index";
+import { theme } from "@/theme/theme";
 import { styled } from "styled-components";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function ToastAdmin() {
-  return <ToastContainer className="toaster" bodyClassName="body-toast" />;
+  return (
+    <ToastAdminStyled>
+      <ToastContainer className="toaster" toastClassName="body-toast" />
+    </ToastAdminStyled>
+  );
 }
 
 const ToastAdminStyled = styled.div`
