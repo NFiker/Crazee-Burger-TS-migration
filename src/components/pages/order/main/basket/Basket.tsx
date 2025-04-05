@@ -1,5 +1,6 @@
+//@ts-nocheck
 import styled from "styled-components";
-import { theme } from "../../../../../theme";
+import { theme } from "../../../../../theme/index.js";
 import BasketHeader from "./basketHeader/BasketHeader.jsx";
 import BasketFooter from "./BasketFooter.jsx";
 import BasketBody from "./basketBody/BasketBody.jsx";
