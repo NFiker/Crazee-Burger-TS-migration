@@ -1,10 +1,23 @@
-import React from "react";
 import styled from "styled-components";
 import { theme } from "@/theme/theme.ts";
 import { MdDeleteForever } from "react-icons/md";
 import { IMAGE_COMING_SOON } from "@/constants/product";
 import { css } from "styled-components";
 import CasinoEffect from "@/components/reusable-ui/CasinoEffect.tsx";
+import Sticker from "@/components/reusable-ui/Sticker";
+
+type BasketCardProps = {
+  title: string;
+  price: string;
+  quantity: number;
+  imageSource: string;
+  className?: string;
+  isClickable?: boolean;
+  onClick?: React.MouseEventHandler<HTMLDivElement>;
+  onDelete?: React.MouseEventHandler<HTMLDivElement>;
+  isSelected?: boolean;
+  isPublicised?: boolean;
+};
 
 export default function BasketCard({
   title,
@@ -16,7 +29,8 @@ export default function BasketCard({
   onDelete,
   onClick,
   isSelected,
-}) {
+  isPublicised,
+}: BasketCardProps) {
   return (
     <BasketCardStyled
       className={className}
@@ -29,6 +43,7 @@ export default function BasketCard({
       </div>
       <div className="image">
         <img src={imageSource ? imageSource : IMAGE_COMING_SOON} alt={title} />
+        {isPublicised && <Sticker className="badge-new" />}
       </div>
       <div className="text-info">
         <div className="left-info">
@@ -45,7 +60,12 @@ export default function BasketCard({
   );
 }
 
-const BasketCardStyled = styled.div`
+type BasketCardStyledProps = {
+  $isClickable?: boolean;
+  $isSelected?: boolean;
+};
+
+const BasketCardStyled = styled.div<BasketCardStyledProps>`
   cursor: ${({ $isClickable }) => ($isClickable ? "pointer" : "auto")};
 
   box-sizing: border-box;
