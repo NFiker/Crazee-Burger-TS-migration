@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { theme } from "../../../../theme";
+import { theme } from "@/theme/theme";
 import Basket from "./basket/Basket";
-import Menu from "./mainRightSide/menu/Menu";
 import MainRightSide from "./mainRightSide/menu/MainRightSide";
 
 export default function Main() {
@@ -18,7 +17,7 @@ const MainStyled = styled.div`
   display: grid;
   background: ${theme.colors.background_white};
   height: calc(95vh - 10vh);
-  height: 100%
+  height: 100%;
   flex: 1;
   border-bottom-left-radius: ${theme.borderRadius.extraRound};
   border-bottom-right-radius: ${theme.borderRadius.extraRound};

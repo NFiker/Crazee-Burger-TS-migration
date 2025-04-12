@@ -9,7 +9,7 @@ import Card from "@/components/reusable-ui/Card.tsx";
 import { useOrderContext } from "@/context/OrderContext.tsx";
 import EmptyMenuAdmin from "./EmptyMenuAdmin";
 import EmptyMenuClient from "./EmptyMenuClient";
-import { checkIfProductClicked } from "./helper";
+import { checkIfProductIsClicked } from "./helper";
 import {
   EMPTY_PRODUCT,
   IMAGE_COMING_SOON,
@@ -87,7 +87,7 @@ export default function Menu() {
                       isModeAdmin ? () => handleProductSelected(id) : null
                     }
                     isHoverable={isModeAdmin}
-                    isSelected={checkIfProductClicked(id, productSelected.id)}
+                    isSelected={checkIfProductIsClicked(id, productSelected.id)}
                     onAdd={(event) => handleAddButton(event, id)}
                     overlapImageSource={IMAGE_NO_STOCK}
                     isOverlapImageVisible={

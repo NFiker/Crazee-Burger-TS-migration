@@ -1,3 +1,4 @@
+//@ts-nocheck
 import Admin from "./admin/Admin.jsx";
 import { useOrderContext } from "@/context/OrderContext.tsx";
 

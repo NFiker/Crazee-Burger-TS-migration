@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Header from "../../../../reusable-ui/Header";
-import { theme } from "../../../../../theme";
+import Header from "@/components/reusable-ui/Header";
+import { theme } from "@/theme/theme";
 
 export default function Footer() {
   return (

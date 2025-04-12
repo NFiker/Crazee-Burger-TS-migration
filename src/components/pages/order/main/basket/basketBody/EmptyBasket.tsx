@@ -2,7 +2,11 @@ import styled from "styled-components";
 import { BASKET_MESSAGE } from "@/constants/product.ts";
 import { theme } from "@/theme/theme.ts";
 
-export default function EmptyBasket({ isLoading }) {
+type EmptyBasketProps = {
+  isLoading: boolean;
+};
+
+export default function EmptyBasket({ isLoading }: EmptyBasketProps) {
   return (
     <EmptyBasketStyled>
       <span className="empty-message">

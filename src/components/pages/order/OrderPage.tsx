@@ -1,12 +1,10 @@
 import styled from "styled-components";
-//@ts-ignore
 import Main from "./main/Main";
 import { theme } from "@/theme/theme";
 import { useEffect } from "react";
 import Navbar from "./navbar/Navbar";
 import { useOrderContext } from "@/context/OrderContext.tsx";
 import { useParams } from "react-router-dom";
-//@ts-ignore
 import { initialiseUserSession } from "./helpers/initialiseUserSession";
 
 export default function OrderPage() {
