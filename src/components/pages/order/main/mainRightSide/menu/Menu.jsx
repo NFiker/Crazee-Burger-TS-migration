@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { theme } from "@/theme/theme.ts";
 import { formatPrice } from "@/utils/maths.ts";
-// import { useContext } from "react";
 
 import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
