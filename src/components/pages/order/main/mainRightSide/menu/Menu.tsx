@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { theme } from "@/theme/theme.ts";
 import { formatPrice } from "@/utils/maths.ts";
-// import { useContext } from "react";
 
 import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
@@ -21,11 +20,11 @@ import { menuAnimation } from "@/theme/animations.ts";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { convertStringToBoolean } from "@/utils/string.ts";
 import RibbonAnimated, { ribbonAnimation } from "./RibbonAnimated";
+import { useParams } from "react-router-dom";
 
 export default function Menu() {
   //State
   const {
-    username,
     menu,
     isModeAdmin,
     handleDelete,
@@ -36,10 +35,17 @@ export default function Menu() {
     handleDeleteBasketProduct,
     handleProductSelected,
   } = useOrderContext();
+
+  const { username } = useParams();
+
   //comportements
 
-  const handleCardDelete = (event, idProductToDelete) => {
+  const handleCardDelete = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    idProductToDelete: string
+  ) => {
     event.stopPropagation();
+    if (username === undefined) return;
     handleDelete(idProductToDelete, username);
     handleDeleteBasketProduct(idProductToDelete, username);
 
@@ -47,9 +53,12 @@ export default function Menu() {
       setProductSelected(EMPTY_PRODUCT);
   };
 
-  const handleAddButton = (event, idProductToAdd) => {
+  const handleAddButton = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    idProductToAdd: string
+  ) => {
     event.stopPropagation();
-    handleAddToBasket(idProductToAdd, username);
+    username && handleAddToBasket(idProductToAdd, username);
   };
 
   let cardContainerClassName = isModeAdmin
@@ -61,7 +70,7 @@ export default function Menu() {
 
   if (isEmpty(menu)) {
     return isModeAdmin ? (
-      <EmptyMenuAdmin onReset={() => resetMenu(username)} />
+      username && <EmptyMenuAdmin onReset={() => resetMenu(username)} />
     ) : (
       <EmptyMenuClient />
     );
@@ -84,7 +93,7 @@ export default function Menu() {
                     hasDeleteButton={isModeAdmin}
                     onDelete={(event) => handleCardDelete(event, id)}
                     onClick={
-                      isModeAdmin ? () => handleProductSelected(id) : null
+                      isModeAdmin ? () => handleProductSelected(id) : undefined
                     }
                     isHoverable={isModeAdmin}
                     isSelected={checkIfProductIsClicked(id, productSelected.id)}

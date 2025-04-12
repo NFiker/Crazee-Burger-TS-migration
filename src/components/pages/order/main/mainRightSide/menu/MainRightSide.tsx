@@ -5,7 +5,7 @@ import { useOrderContext } from "@/context/OrderContext.tsx";
 import { useContext } from "react";
 import styled from "styled-components";
 import { theme } from "@/theme/theme.ts";
-import Menu from "./Menu.jsx";
+import Menu from "./Menu.js";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { adminAnimation } from "@/theme/animations.ts";
 
