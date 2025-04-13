@@ -3,7 +3,7 @@ import React, { forwardRef } from "react";
 import { theme } from "@/theme/theme.ts";
 import TextInput from "@/components/reusable-ui/TextInput.tsx";
 import Button from "@/components/reusable-ui/Button.tsx";
-import ImagePreview from "./ImagePreview.jsx";
+import ImagePreview from "./ImagePreview.tsx";
 import SubmitMessage from "../addForm/SubmitMessage.jsx";
 import { EMPTY_PRODUCT } from "@/constants/product.ts";
 import SelectInput from "@/components/reusable-ui/SelectInput.tsx";

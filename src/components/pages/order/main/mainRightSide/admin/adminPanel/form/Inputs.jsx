@@ -5,7 +5,7 @@ import styled from "styled-components";
 import {
   getInputTextsConfig,
   getInputSelectsConfig,
-} from "./getInputConfig.jsx";
+} from "./getInputConfig.tsx";
 
 export const Inputs = React.forwardRef(
   ({ product, onChange, onFocus, onBlur }, ref) => {

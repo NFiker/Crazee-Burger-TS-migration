@@ -1,8 +1,7 @@
 import { useOrderContext } from "@/context/OrderContext.tsx";
-
 import { useState, useContext } from "react";
 import styled from "styled-components";
-import ImagePreview from "../form/ImagePreview.jsx";
+import ImagePreview from "../form/ImagePreview.tsx";
 import TextInput from "@/components/reusable-ui/TextInput.tsx";
 import { theme } from "@/theme/theme.ts";
 import EditInfoMessage from "./EditInfoMessage.jsx";
