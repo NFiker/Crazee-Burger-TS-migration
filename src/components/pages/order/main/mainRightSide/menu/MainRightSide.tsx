@@ -1,5 +1,5 @@
 //@ts-nocheck
-import Admin from "./admin/Admin.jsx";
+import Admin from "./admin/Admin.js";
 import { useOrderContext } from "@/context/OrderContext.tsx";
 
 import { useContext } from "react";
