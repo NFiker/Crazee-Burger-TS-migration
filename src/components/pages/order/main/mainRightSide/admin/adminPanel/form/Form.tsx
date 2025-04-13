@@ -1,15 +1,14 @@
 import styled from "styled-components";
-import React, { forwardRef } from "react";
-import { theme } from "@/theme/theme.ts";
-import TextInput from "@/components/reusable-ui/TextInput.tsx";
-import Button from "@/components/reusable-ui/Button.tsx";
 import ImagePreview from "./ImagePreview.tsx";
-import SubmitMessage from "../addForm/SubmitMessage.jsx";
-import { EMPTY_PRODUCT } from "@/constants/product.ts";
-import SelectInput from "@/components/reusable-ui/SelectInput.tsx";
-import { Inputs } from "./Inputs.tsx";
+import { Inputs, InputsProps } from "./Inputs.tsx";
+import React from "react";
 
-const Form = React.forwardRef(
+type FormProps = {
+  onSubmit?: React.FormEventHandler<HTMLFormElement>;
+  children: React.ReactNode;
+} & InputsProps;
+
+const Form = React.forwardRef<HTMLInputElement, FormProps>(
   ({ product, onSubmit, onChange, onFocus, onBlur, children }, ref) => {
     //State (vide)
 

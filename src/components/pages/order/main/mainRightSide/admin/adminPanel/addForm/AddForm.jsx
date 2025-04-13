@@ -2,7 +2,7 @@ import { useOrderContext } from "@/context/OrderContext.tsx";
 
 import { useContext, useState } from "react";
 import { EMPTY_PRODUCT } from "@/constants/product.ts";
-import Form from "../form/Form.jsx";
+import Form from "../form/Form.tsx";
 import Button from "@/components//reusable-ui/Button.tsx";
 import SubmitMessage from "./SubmitMessage.jsx";
 import SubmitButton from "./SubmitButton.jsx";

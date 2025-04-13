@@ -2,10 +2,7 @@ import React from "react";
 import TextInput from "@/components/reusable-ui/TextInput.tsx";
 import SelectInput from "@/components/reusable-ui/SelectInput.tsx";
 import styled from "styled-components";
-import {
-  getInputTextsConfig,
-  getInputSelectsConfig,
-} from "./getInputConfig.tsx";
+import { getInputTextsConfig, getInputSelectsConfig } from "./InputConfig.tsx";
 import { MenuProduct } from "@/types/Product.ts";
 
 export type InputsProps = {
