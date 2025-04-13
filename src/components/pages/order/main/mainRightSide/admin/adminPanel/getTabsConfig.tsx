@@ -1,7 +1,7 @@
 import { AiOutlinePlus } from "react-icons/ai";
 import { MdModeEditOutline } from "react-icons/md";
 //@ts-ignore
-import AddForm from "./addForm/AddForm.jsx";
+import AddForm from "./addForm/AddForm.js";
 //@ts-ignore
 import EditForm from "./editForm/EditForm.jsx";
 //@ts-ignore

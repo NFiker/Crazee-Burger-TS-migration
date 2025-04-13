@@ -1,7 +1,10 @@
 import Button from "@/components/reusable-ui/Button.tsx";
-import SubmitMessage from "./SubmitMessage.jsx";
+import SubmitMessage from "./SubmitMessage.js";
 
-export default function SubmitButton({ isSubmitted }) {
+type SubmitButtonProps = {
+  isSubmitted: boolean;
+};
+export default function SubmitButton({ isSubmitted }: SubmitButtonProps) {
   return (
     <>
       <Button
