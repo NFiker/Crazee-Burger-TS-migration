@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../../../../../../../../theme";
-import { fadeIn } from "../../../../../../../../../theme/animations";
+import { theme } from "@/theme/theme";
+import { fadeIn } from "@/theme/animations.ts";
 
 export default function ImagePreview({ title, imageSource }) {
   return (

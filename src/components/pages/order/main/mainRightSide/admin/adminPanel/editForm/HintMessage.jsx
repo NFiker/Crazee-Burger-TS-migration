@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { theme } from "../../../../../../../../../theme";
+import { theme } from "@/theme/theme";
 import { HiCursorClick } from "react-icons/hi";
 
 export default function HintMessage() {

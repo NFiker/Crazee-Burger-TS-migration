@@ -1,4 +1,4 @@
-import Button from "../../../../../../../../reusable-ui/Button.tsx";
+import Button from "@/components/reusable-ui/Button.tsx";
 import SubmitMessage from "./SubmitMessage.jsx";
 
 export default function SubmitButton({ isSubmitted }) {
