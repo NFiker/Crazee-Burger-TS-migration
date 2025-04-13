@@ -1,13 +1,11 @@
 import styled from "styled-components";
 import Tab from "@/components/reusable-ui/Tab.tsx";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-
 import { theme } from "@/theme/theme.ts";
-import OrderPage from "@/components/pages/order/OrderPage.tsx";
-import { useContext } from "react";
 import { useOrderContext } from "@/context/OrderContext.tsx";
 
-import { getTabsConfig } from "./adminPanel/getTabsConfig.jsx";
+import { getTabsConfig } from "./adminPanel/getTabsConfig";
+import { ADMIN_TAB_LABEL } from "@/constants/tab.js";
 
 export default function AdminTabs() {
   const {
@@ -16,7 +14,8 @@ export default function AdminTabs() {
     currentTabSelected,
     setCurrentTabSelected,
   } = useOrderContext();
-  const selectTab = (tabSelected) => {
+
+  const selectTab = (tabSelected: ADMIN_TAB_LABEL) => {
     setIsCollapsed(false); // Ouvre le panel admin au click d'un tab
     setCurrentTabSelected(tabSelected); // réactualise l'onglet sélectionné
   };
@@ -26,6 +25,7 @@ export default function AdminTabs() {
   return (
     <AdminTabsStyled>
       <Tab
+        index={ADMIN_TAB_LABEL.CHEVRON}
         label=""
         Icon={isCollapsed ? <FiChevronUp /> : <FiChevronDown />}
         onClick={() => {
@@ -36,6 +36,7 @@ export default function AdminTabs() {
       ;
       {tabs.map((tab) => (
         <Tab
+          index={tab.index}
           key={tab.index}
           label={tab.label}
           Icon={tab.Icon}
