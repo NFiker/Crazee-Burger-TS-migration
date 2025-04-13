@@ -3,9 +3,9 @@ import { MdModeEditOutline } from "react-icons/md";
 //@ts-ignore
 import AddForm from "./addForm/AddForm.js";
 //@ts-ignore
-import EditForm from "./editForm/EditForm.jsx";
+import EditForm from "./editForm/EditForm.js";
 //@ts-ignore
-import HintMessage from "./editForm/HintMessage.jsx";
+import HintMessage from "./editForm/HintMessage.js";
 import { ADMIN_TAB_LABEL } from "@/constants/tab.ts";
 import { TabType } from "@/types/Tab.ts";
 
