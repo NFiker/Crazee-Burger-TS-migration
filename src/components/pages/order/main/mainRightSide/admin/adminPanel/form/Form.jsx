@@ -7,7 +7,7 @@ import ImagePreview from "./ImagePreview.tsx";
 import SubmitMessage from "../addForm/SubmitMessage.jsx";
 import { EMPTY_PRODUCT } from "@/constants/product.ts";
 import SelectInput from "@/components/reusable-ui/SelectInput.tsx";
-import { Inputs } from "./Inputs.jsx";
+import { Inputs } from "./Inputs.tsx";
 
 const Form = React.forwardRef(
   ({ product, onSubmit, onChange, onFocus, onBlur, children }, ref) => {

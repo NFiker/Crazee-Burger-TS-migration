@@ -6,8 +6,16 @@ import {
   getInputTextsConfig,
   getInputSelectsConfig,
 } from "./getInputConfig.tsx";
+import { MenuProduct } from "@/types/Product.ts";
 
-export const Inputs = React.forwardRef(
+export type InputsProps = {
+  product: MenuProduct;
+  onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
+  onFocus?: React.FocusEventHandler<HTMLInputElement | HTMLSelectElement>;
+  onBlur?: React.FocusEventHandler<HTMLInputElement | HTMLSelectElement>;
+};
+
+export const Inputs = React.forwardRef<HTMLInputElement, InputsProps>(
   ({ product, onChange, onFocus, onBlur }, ref) => {
     const inputTexts = getInputTextsConfig(product);
     const inputSelects = getInputSelectsConfig(product);
@@ -26,7 +34,7 @@ export const Inputs = React.forwardRef(
             onFocus={onFocus}
             onBlur={onBlur}
             version="minimalist"
-            className={input.className}
+            // className={input.className}
             ref={ref && input.name === "title" ? ref : null}
           />
         ))}
