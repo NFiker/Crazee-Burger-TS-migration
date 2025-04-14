@@ -1,11 +1,11 @@
 //@ts-nocheck
-import Admin from "./admin/Admin.jsx";
+import Admin from "./admin/Admin.tsx";
 import { useOrderContext } from "@/context/OrderContext.tsx";
 
 import { useContext } from "react";
 import styled from "styled-components";
 import { theme } from "@/theme/theme.ts";
-import Menu from "./Menu.js";
+import Menu from "./menu/Menu.js";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { adminAnimation } from "@/theme/animations.ts";
 

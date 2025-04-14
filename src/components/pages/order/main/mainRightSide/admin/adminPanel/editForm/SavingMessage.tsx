@@ -1,7 +1,6 @@
-import React from "react";
 import styled from "styled-components";
 import { BsCloudCheck } from "react-icons/bs";
-import { theme } from "../../../../../../../../../theme";
+import { theme } from "@/theme/theme";
 
 export default function SavingMessage() {
   return (
@@ -20,7 +19,7 @@ const SavingMessageStyled = styled.div`
   font-size: ${theme.fonts.size.SM};
 
   .icon {
-    font-size: ${theme.fonts.size.P2}
+    font-size: ${theme.fonts.size.P2};
     display: flex;
     margin: 0 10px;
   }

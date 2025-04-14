@@ -1,13 +1,18 @@
 import React from "react";
-import TextInput from "../../../../../../../../reusable-ui/TextInput.tsx";
-import SelectInput from "../../../../../../../../reusable-ui/SelectInput.tsx";
+import TextInput from "@/components/reusable-ui/TextInput.tsx";
+import SelectInput from "@/components/reusable-ui/SelectInput.tsx";
 import styled from "styled-components";
-import {
-  getInputTextsConfig,
-  getInputSelectsConfig,
-} from "./getInputConfig.jsx";
+import { getInputTextsConfig, getInputSelectsConfig } from "./InputConfig.tsx";
+import { MenuProduct } from "@/types/Product.ts";
 
-export const Inputs = React.forwardRef(
+export type InputsProps = {
+  product: MenuProduct;
+  onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement>;
+  onFocus?: React.FocusEventHandler<HTMLInputElement | HTMLSelectElement>;
+  onBlur?: React.FocusEventHandler<HTMLInputElement | HTMLSelectElement>;
+};
+
+export const Inputs = React.forwardRef<HTMLInputElement, InputsProps>(
   ({ product, onChange, onFocus, onBlur }, ref) => {
     const inputTexts = getInputTextsConfig(product);
     const inputSelects = getInputSelectsConfig(product);
@@ -26,7 +31,7 @@ export const Inputs = React.forwardRef(
             onFocus={onFocus}
             onBlur={onBlur}
             version="minimalist"
-            className={input.className}
+            // className={input.className}
             ref={ref && input.name === "title" ? ref : null}
           />
         ))}
