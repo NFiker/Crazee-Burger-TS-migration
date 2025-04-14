@@ -8,7 +8,7 @@ Le projet est développé avec **React**, **TypeScript**, **Styled Components** 
 
 ## 🚀 Démo
 
-🔗 [Accéder à l'application Crazee-Burger](https://crazee-burger-iomjmdtz0-nfikers-projects.vercel.app/)
+🔗 [Accéder à l'application Crazee-Burger](https://crazee-burger-32ptj44qq-nfikers-projects.vercel.app/)
 
 ---
 
@@ -82,4 +82,6 @@ npm run dev
 
 ## 👤 Auteur
 
-                      Développé avec ❤️ par **NFiker**
+<p align="center">
+  <strong>Développé avec ❤️ par NFiker</strong>
+</p>
