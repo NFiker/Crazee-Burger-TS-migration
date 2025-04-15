@@ -1,14 +1,26 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "module": "CommonJS",
-    "lib": ["ES2020"],
-    "rootDir": "src",
-    "outDir": "dist",
-    "strict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "target": "ES2020", // Définir la version ECMAScript cible
+    "module": "commonjs", // Spécifie le système de module à utiliser (CommonJS pour Node.js)
+    "moduleResolution": "node", // Utilisation de la résolution des modules selon Node.js
+    "lib": ["ES2020"], // Inclure les types nécessaires pour ES2020
+    "outDir": "./dist", // Dossier de sortie pour les fichiers compilés
+    "rootDir": "./src", // Dossier source pour tes fichiers TypeScript
+    "esModuleInterop": true, // Pour assurer la compatibilité avec les modules CommonJS
+    "skipLibCheck": true, // Ignore les vérifications de type dans les fichiers de déclaration
+    "strict": true, // Active les vérifications strictes de types (important pour TypeScript)
+    "baseUrl": "./src", // Définit la racine du projet pour les imports relatifs
+    "paths": {
+      "@/*": ["*"] // Alias pour le dossier src
+    },
+    "resolveJsonModule": true, // Permet d'importer des fichiers JSON en tant que modules
+    "forceConsistentCasingInFileNames": true // Assure que la casse des noms de fichiers soit cohérente
   },
-  "include": ["src"]
+  "include": [
+    "src/**/*" // Inclut tous les fichiers dans le dossier src
+  ],
+  "exclude": [
+    "node_modules", // Exclut le dossier node_modules
+    "dist" // Exclut le dossier dist, qui est généré après compilation
+  ]
 }
