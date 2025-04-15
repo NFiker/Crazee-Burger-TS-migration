@@ -1,0 +1,19 @@
+# Node.js dependencies
+node_modules/
+
+# TypeScript build output
+dist/
+build/
+
+# PostgreSQL Data (si applicable)
+*.log
+*.sql
+*.sqlite
+
+# Environnement local
+.env
+
+# N'importe quel fichier temporaire ou de configuration spécifique
+*.tmp
+*.swp
+*.DS_Store
