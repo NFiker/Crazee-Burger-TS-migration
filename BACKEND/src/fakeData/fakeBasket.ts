@@ -2,7 +2,7 @@
 //@TODO: migrate enum/product file
 import { EMPTY_PRODUCT } from "@/constants/product";
 
-import { BasketProduct } from "../types/Product";
+import { BasketProduct } from "../modules/product/product.type";
 
 export const EMPTY: BasketProduct[] = [];
 

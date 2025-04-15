@@ -1,4 +1,4 @@
-import { MenuProduct } from "../types/Product";
+import { MenuProduct } from "../modules/product/product.type";
 
 const EMPTY: MenuProduct[] = [];
 
