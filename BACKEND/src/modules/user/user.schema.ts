@@ -17,3 +17,8 @@ export const menuProducts = pgTable("menu_products", {
   isAvailable: boolean("is_available").notNull(),
   isPublicised: boolean("is_publicised").notNull(),
 });
+
+export const schema = {
+  users,
+  menuProducts,
+};
