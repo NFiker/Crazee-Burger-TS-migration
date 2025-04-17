@@ -2,7 +2,6 @@ import { pgTable, serial, text, integer, boolean } from "drizzle-orm/pg-core";
 
 // Table des utilisateurs
 export const users = pgTable("users", {
-  id: serial("id").primaryKey(), // auto-incrémenté
   username: text("username").primaryKey(), // clé primaire logique
 });
 
