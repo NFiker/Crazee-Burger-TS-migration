@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2020", // Définir la version ECMAScript cible
-    "module": "commonjs", // Spécifie le système de module à utiliser (CommonJS pour Node.js)
+    "module": "esnext", // Spécifie le système de module à utiliser (CommonJS pour Node.js)
     "moduleResolution": "node", // Utilisation de la résolution des modules selon Node.js
     "lib": ["ES2020"], // Inclure les types nécessaires pour ES2020
     "outDir": "./dist", // Dossier de sortie pour les fichiers compilés
