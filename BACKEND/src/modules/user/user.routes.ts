@@ -15,7 +15,7 @@ router.post("/", createUserHandler);
 router.get("/:username", getUserHandler);
 
 // Mettre à jour son menu
-router.put("/:username", updateUserHandler);
+router.put("/:username/menu", updateUserHandler);
 
 // Supprimer un utilisateur
 router.delete("/:username", deleteUserHandler);
