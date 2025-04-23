@@ -6,6 +6,27 @@ Le projet est développé avec **React**, **TypeScript**, **Styled Components** 
 
 ---
 
+## 🧭 Migration Backend en cours
+
+> 🧪 **Migration en cours vers une architecture backend Node.js / Express / PostgreSQL / Drizzle ORM.**
+
+Dans une optique de montée en compétence et d’industrialisation, je migre actuellement l’ensemble de la logique backend de Firebase vers un backend basé sur :
+
+- ⚙️ **Node.js** avec **Express.js**
+- 🛢 **PostgreSQL** pour une base de données relationnelle robuste
+- 🧬 **Drizzle ORM** pour une approche typesafe moderne des migrations et des requêtes SQL
+- **Railway** pour un déploiement simple et complet
+
+Cette transition me permet :
+
+- de mieux contrôler la structure des données
+- d’avoir un environnement de développement backend plus modulaire
+- de préparer des déploiements back/frontend découplés
+
+🔥 Objectif : rendre l’architecture plus scalable, testable et maintenable en contexte pro.
+
+---
+
 ## 🚀 Démo
 
 🔗 [Accéder à l'application Crazee-Burger](https://crazee-burger-32ptj44qq-nfikers-projects.vercel.app/)
@@ -20,7 +41,8 @@ Le projet est développé avec **React**, **TypeScript**, **Styled Components** 
 - 💅 [Styled Components](https://styled-components.com/)
 - 🔥 [Firebase](https://firebase.google.com/)
   - Firestore (base de données NoSQL en temps réel)
-- ☁️ [Vercel](https://vercel.com/) (déploiement)
+- ☁️ [Vercel](https://vercel.com/) (déploiement frontend)
+- ⚡ [Railway](https://railway.app/) (déploiement backend)
 
 ---
 
