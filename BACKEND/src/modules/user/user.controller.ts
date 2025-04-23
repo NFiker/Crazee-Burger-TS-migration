@@ -4,21 +4,19 @@ import { MenuProduct } from "@/modules/product/product.type";
 import { User } from "@/modules/user/user.types";
 import { eq } from "drizzle-orm";
 
-// Logique pour créer un utilisateur et son menu
+// Créer un utilisateur et son menu
 export const createUser = async (
   username: string,
   menu: MenuProduct[]
 ): Promise<User> => {
-  // Créer un utilisateur dans la base de données
   await db.insert(users).values({ username });
 
-  // Créer son menu
   await db.insert(menuProducts).values(
     menu.map((item) => ({
       userId: username,
       imageSource: item.imageSource,
       title: item.title,
-      price: item.price,
+      price: item.price.toString(), // 👈 conversion en string pour PostgreSQL.numeric
       quantity: item.quantity ?? 1,
       isAvailable: item.isAvailable,
       isPublicised: item.isPublicised,
@@ -28,7 +26,7 @@ export const createUser = async (
   return { username, menu };
 };
 
-// Logique pour récupérer un utilisateur et son menu
+// Récupérer un utilisateur et son menu
 export const getUser = async (username: string): Promise<User | null> => {
   const user = await db.query.users.findFirst({
     where: eq(users.username, username),
@@ -46,7 +44,7 @@ export const getUser = async (username: string): Promise<User | null> => {
       id: String(item.id),
       imageSource: item.imageSource,
       title: item.title,
-      price: item.price,
+      price: parseFloat(item.price as string), // 👈 retransformé en number
       quantity: item.quantity,
       isAvailable: item.isAvailable,
       isPublicised: item.isPublicised,
@@ -54,7 +52,7 @@ export const getUser = async (username: string): Promise<User | null> => {
   };
 };
 
-// Logique pour mettre à jour le menu d'un utilisateur
+// Mettre à jour le menu
 export const updateUser = async (
   username: string,
   newMenu: MenuProduct[]
@@ -68,7 +66,7 @@ export const updateUser = async (
       userId: username,
       imageSource: item.imageSource,
       title: item.title,
-      price: item.price,
+      price: item.price.toString(), // 👈 conversion string
       quantity: item.quantity ?? 1,
       isAvailable: item.isAvailable,
       isPublicised: item.isPublicised,
@@ -78,7 +76,7 @@ export const updateUser = async (
   return { username, menu: newMenu };
 };
 
-// Logique pour supprimer un utilisateur et son menu
+// Supprimer un utilisateur
 export const deleteUser = async (username: string): Promise<boolean> => {
   const existing = await getUser(username);
   if (!existing) return false;
