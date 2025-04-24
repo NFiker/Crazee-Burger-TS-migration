@@ -22,7 +22,7 @@ export const createUser = async (userId: string): Promise<User> => {
   // NOURRITURE
   const newUserToCreate: User = {
     username: userId,
-    menu: fakeMenu.LARGE,
+    menu: fakeMenu.SMALL,
   };
 
   // setDoc(CACHETTE, NOURRITURE);
