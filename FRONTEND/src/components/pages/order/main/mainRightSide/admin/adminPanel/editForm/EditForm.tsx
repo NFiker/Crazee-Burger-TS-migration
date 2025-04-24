@@ -5,6 +5,7 @@ import Form from "../form/Form.tsx";
 import SavingMessage from "./SavingMessage.js";
 import { useSuccessMessage } from "@/hooks/useSuccessMessage.ts";
 import { useParams } from "react-router-dom";
+import { sanitizeRawPriceInput } from "@/utils/maths.ts";
 
 export default function EditForm() {
   // State
@@ -21,14 +22,18 @@ export default function EditForm() {
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = event.target;
+    let updatedValue = value;
 
-    const productBeingUpdated = { ...productSelected, [name]: value };
+    if (name === "price") {
+      updatedValue = sanitizeRawPriceInput(value);
+    }
+
+    const productBeingUpdated = { ...productSelected, [name]: updatedValue };
 
     setProductSelected(productBeingUpdated);
     username && handleEdit(productBeingUpdated, username);
   };
 
-  //Comportements
   const handleOnFocus = (
     event: React.FocusEvent<HTMLInputElement | HTMLSelectElement>
   ) => {

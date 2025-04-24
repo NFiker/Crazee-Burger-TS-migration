@@ -1,7 +1,6 @@
 export function formatPrice(priceToFormat: number | string): string {
   let price = priceToFormat;
 
-  // @TODO: perhaps change this to if(!price) return 0
   if (!price) return "0,00 €";
   price = replaceFrenchCommaWithDot(price);
 
@@ -13,6 +12,24 @@ export function formatPrice(priceToFormat: number | string): string {
 }
 
 export function replaceFrenchCommaWithDot(price: string | number): number {
-  if (typeof price === "string") price = parseFloat(price.replace(",", "."));
+  if (typeof price === "string") {
+    if (price.trim() === "") return 0;
+    price = parseFloat(price.replace(",", "."));
+  }
   return price;
+}
+
+export function sanitizeRawPriceInput(value: string): string {
+  // Remplace les caractères invalides d'abord
+  const cleaned = value.replace(/[^\d.,]/g, "").replace(",", ".");
+
+  // Regex : jusqu’à 4 chiffres, un point, puis jusqu’à 2 chiffres
+  const match = cleaned.match(/^(\d{0,4})([.,]?)(\d{0,2})/);
+
+  if (match) {
+    const [, intPart, separator, decimalPart] = match;
+    return intPart + (separator ? "," : "") + (decimalPart || "");
+  }
+
+  return "";
 }
