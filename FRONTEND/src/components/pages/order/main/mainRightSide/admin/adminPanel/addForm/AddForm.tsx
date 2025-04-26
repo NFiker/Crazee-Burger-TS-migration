@@ -9,6 +9,7 @@ import {
 } from "@/utils/maths.ts";
 import { useParams } from "react-router-dom";
 import { convertStringToBoolean } from "@/utils/string.ts";
+import { formatInputChange } from "@/utils/form.ts";
 
 export default function AddForm() {
   // State
@@ -37,14 +38,7 @@ export default function AddForm() {
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = event.target;
-    let updatedValue: string | number | boolean = value;
-
-    if (name === "price") {
-      updatedValue = sanitizeRawPriceInput(value);
-    }
-    if (name === "isAvailable" || name === "isPublicised") {
-      updatedValue = convertStringToBoolean(value);
-    }
+    const updatedValue = formatInputChange(name, value);
 
     const updatedProduct = { ...newProduct, [name]: updatedValue };
     setNewProduct(updatedProduct);
