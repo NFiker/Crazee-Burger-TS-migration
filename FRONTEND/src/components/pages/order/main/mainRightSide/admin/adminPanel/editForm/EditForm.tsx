@@ -6,6 +6,7 @@ import SavingMessage from "./SavingMessage.js";
 import { useSuccessMessage } from "@/hooks/useSuccessMessage.ts";
 import { useParams } from "react-router-dom";
 import { sanitizeRawPriceInput } from "@/utils/maths.ts";
+import { convertStringToBoolean } from "@/utils/string.ts";
 
 export default function EditForm() {
   // State
@@ -22,10 +23,13 @@ export default function EditForm() {
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = event.target;
-    let updatedValue = value;
+    let updatedValue: string | number | boolean = value;
 
     if (name === "price") {
       updatedValue = sanitizeRawPriceInput(value);
+    }
+    if (name === "isAvailable" || name === "isPublicised") {
+      updatedValue = convertStringToBoolean(value);
     }
 
     const productBeingUpdated = { ...productSelected, [name]: updatedValue };
