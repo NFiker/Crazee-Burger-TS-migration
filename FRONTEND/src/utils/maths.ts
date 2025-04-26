@@ -23,7 +23,7 @@ export function sanitizeRawPriceInput(value: string): string {
   // Remplace les caractères invalides d'abord
   const cleaned = value.replace(/[^\d.,]/g, "").replace(",", ".");
 
-  // Regex : jusqu’à 4 chiffres, un point, puis jusqu’à 2 chiffres
+  // Regex : jusqu’à 4 chiffres, un point ou virgule, puis jusqu’à 2 chiffres
   const match = cleaned.match(/^(\d{0,4})([.,]?)(\d{0,2})/);
 
   if (match) {
