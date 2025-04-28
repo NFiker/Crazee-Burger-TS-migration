@@ -53,6 +53,9 @@ export const getUser = async (userId: string) => {
 // Mettre à jour le menu d'un utilisateur
 export const updateMenu = async (userId: string, menu: MenuProduct[]) => {
   try {
+    console.log("Updating menu for user:", userId); // Ajoute un log ici pour vérifier l'utilisateur
+    console.log("Menu being sent to backend:", menu); // Log des données envoyées
+
     const response = await fetch(`${apiUrl}/users/${userId}/menu`, {
       method: "PUT",
       headers: {
@@ -68,7 +71,7 @@ export const updateMenu = async (userId: string, menu: MenuProduct[]) => {
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error(error);
+    console.error("Error while updating menu:", error); // Plus de détails sur l'erreur
     throw error;
   }
 };
