@@ -13,7 +13,7 @@ export const createUser = async (userId: string) => {
       },
       body: JSON.stringify({
         username: userId,
-        menu: fakeMenu.MEDIUM,
+        menu: fakeMenu.LARGE,
       }),
     });
 
